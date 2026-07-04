@@ -1,0 +1,81 @@
+.checkbox-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+
+.inv-table-wrap {
+  overflow-x: auto;
+}
+
+.inv-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.inv-table th {
+  text-align: left;
+  padding: 12px 16px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-muted);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-alt);
+}
+
+.inv-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.inv-table tr:last-child td {
+  border-bottom: none;
+}
+
+.row-low-stock {
+  background: #fdf6ec;
+}
+
+.inv-name {
+  font-weight: 600;
+}
+
+.inv-sku {
+  font-size: 11px;
+  color: var(--ink-muted);
+}
+
+.qty-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.qty-btn {
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  font-size: 15px;
+  line-height: 1;
+}
+
+.qty-value {
+  min-width: 24px;
+  text-align: center;
+}
+
+.ok-stock {
+  font-size: 11px;
+  color: var(--accent-teal-dark);
+}
+
+.inv-actions {
+  display: flex;
+  gap: 8px;
+}

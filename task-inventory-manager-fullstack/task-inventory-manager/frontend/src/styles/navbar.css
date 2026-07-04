@@ -1,0 +1,92 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 14px 28px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-mark {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ink);
+  color: var(--accent-amber);
+  font-family: var(--font-display);
+  font-weight: 700;
+  border-radius: 6px;
+  transform: rotate(-4deg);
+}
+
+.navbar-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.1;
+}
+
+.navbar-subtitle {
+  font-size: 11px;
+  color: var(--ink-muted);
+  letter-spacing: 0.03em;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+}
+
+.navbar-links a {
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 13.5px;
+  color: var(--ink-muted);
+}
+
+.navbar-links a:hover {
+  background: var(--surface-alt);
+  color: var(--ink);
+}
+
+.navbar-links a.active {
+  background: var(--ink);
+  color: #fff;
+}
+
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.navbar-user-info {
+  text-align: right;
+}
+
+.navbar-user-name {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+@media (max-width: 780px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .navbar-links {
+    order: 3;
+    width: 100%;
+  }
+}

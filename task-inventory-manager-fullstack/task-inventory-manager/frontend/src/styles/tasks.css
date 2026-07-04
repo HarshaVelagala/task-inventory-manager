@@ -1,0 +1,96 @@
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 18px;
+}
+
+.task-card-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.task-card-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.task-card-title-row h3 {
+  font-size: 15.5px;
+  margin: 0;
+}
+
+.priority-chip {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.priority-low {
+  background: #eef1f6;
+  color: var(--ink-muted);
+}
+.priority-medium {
+  background: #fdf0d8;
+  color: var(--accent-amber-dark);
+}
+.priority-high {
+  background: #fbe4de;
+  color: var(--accent-rust-dark);
+}
+
+.task-card-desc {
+  color: var(--ink-soft);
+  font-size: 13.5px;
+  margin: 4px 0 8px;
+  max-width: 60ch;
+}
+
+.task-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.status-pill {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.task-due {
+  font-size: 11.5px;
+  color: var(--ink-muted);
+}
+
+.task-card-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .task-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .task-card-actions {
+    justify-content: flex-end;
+  }
+}

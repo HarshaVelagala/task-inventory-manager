@@ -1,0 +1,249 @@
+:root {
+  /* Color: cool paper ledger, navy ink, warehouse-tag accents */
+  --bg: #eef1f6;
+  --surface: #ffffff;
+  --surface-alt: #f6f8fb;
+  --ink: #1b2a4a;
+  --ink-soft: #33456b;
+  --ink-muted: #6b7690;
+  --border: #dbe1ea;
+  --border-strong: #c3cbda;
+
+  --accent-amber: #d8a72e;
+  --accent-amber-dark: #b3860f;
+  --accent-teal: #2f8f82;
+  --accent-teal-dark: #1f6b60;
+  --accent-rust: #c4573b;
+  --accent-rust-dark: #9c3d26;
+
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", monospace;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --shadow-card: 0 1px 2px rgba(27, 42, 74, 0.06), 0 4px 14px rgba(27, 42, 74, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 0.4em 0;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+input,
+select,
+textarea {
+  font-family: var(--font-body);
+  font-size: 14px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-amber-dark);
+  outline-offset: 2px;
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+/* ---------- shared primitives ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  font-weight: 600;
+  font-size: 13.5px;
+  transition: transform 0.08s ease, filter 0.15s ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: #fff;
+}
+.btn-primary:hover {
+  filter: brightness(1.15);
+}
+
+.btn-accent {
+  background: var(--accent-amber);
+  color: #2a1e02;
+}
+.btn-accent:hover {
+  background: var(--accent-amber-dark);
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: var(--border-strong);
+  color: var(--ink-soft);
+}
+.btn-ghost:hover {
+  background: var(--surface-alt);
+}
+
+.btn-danger {
+  background: transparent;
+  border-color: var(--accent-rust);
+  color: var(--accent-rust-dark);
+}
+.btn-danger:hover {
+  background: rgba(196, 87, 59, 0.08);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.field label {
+  font-size: 12.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-muted);
+}
+
+.field input,
+.field select,
+.field textarea {
+  padding: 9px 11px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface-alt);
+  color: var(--ink);
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  background: #fff;
+  border-color: var(--accent-amber-dark);
+}
+
+.error-banner {
+  background: #fdeeea;
+  border: 1px solid var(--accent-rust);
+  color: var(--accent-rust-dark);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 13.5px;
+  margin-bottom: 16px;
+}
+
+/* Signature element: manifest "stamp" badge used for roles/status */
+.stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px 3px 8px;
+  border: 1.5px dashed currentColor;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transform: rotate(-1.5deg);
+  white-space: nowrap;
+}
+
+.stamp-admin {
+  color: var(--accent-rust-dark);
+}
+.stamp-manager {
+  color: var(--accent-amber-dark);
+}
+.stamp-user {
+  color: var(--ink-soft);
+}
+
+/* Manifest row: torn-corner tab indicating status color */
+.tag-row {
+  position: relative;
+  padding-left: 14px;
+}
+.tag-row::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 4px;
+  border-radius: 2px;
+  background: var(--tag-color, var(--border-strong));
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
